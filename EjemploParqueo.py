@@ -10,6 +10,7 @@
 #-------------------------------------------------------------------------------
 import random
 import string
+import time
 class Cola (object):
 
     def __init__(self):
@@ -23,6 +24,12 @@ class Cola (object):
              print("La cola esta vacia")
         else:
             return self.items.pop(0)
+
+    def agregarFinal(self, dato):
+	    self.items.insert(0,item)
+
+    def removerFrente(self):
+	        return self.items.pop()
 
     def es_vacia(self):
         if len(self.items)==0:
@@ -44,12 +51,12 @@ class Cola (object):
                     return "Registrado: "+i.descripcion()
         return "No se encontro la placa";
 
-    def buscarFicha(self, x):
+    def buscarCodigo(self, x):
         if len(self.items)!=0:
             for i in self.items:
-                if i.getFicha() == x:
+                if i.getCodigo() == x:
                     return "Registrado: "+i.descripcion()
-        return "No se encontro moto con dicha ficha";
+        return "No se encontro carnet";
 
     def buscarPropietario(self, x):
         if len(self.items)!=0:
@@ -90,28 +97,28 @@ def main ():
     print("1. Registrar")
     print("2. Consulta por Placa")
     print("3. Consulta por Nombre Propietario ")
-    print("4. Consulta por Ficha ")
+    print("4. Consulta por Carnet ")
     print("5. Registros ")
     opcion = int(input())
     if opcion == 1:
         placa=raw_input("Placa\n")
         nom=raw_input("Nombre Usuario\n")
         ident=int(input("Carnet\n"))
-        ficha= random.randint(0,100)
+        ficha= time.strftime("%c")
         motos=Moto(nom,placa,ident,ficha)
         usuario.encolar(motos)
     elif opcion==2:
       placa=raw_input("Placa\n")
       print(usuario.buscarPlaca(placa))
-      usuario.desencolar()
+      #usuario.desencolar()
     elif opcion==3:
         nom=raw_input("Nombre Usuario\n")
         print(usuario.buscarPropietario(nom))
-        usuario.desencolar()
+        #usuario.desencolar()
     elif opcion==4:
-        ficha=raw_input("Ficha\n")
-        print(usuario.buscarFicha(ficha))
-        usuario.desencolar()
+        ident=int(input("Carnet\n"))
+        print(usuario.buscarCodigo(ident))
+        #usuario.desencolar()
     elif opcion==5:
         print(usuario.mirarElementos())
     else:
