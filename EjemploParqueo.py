@@ -103,16 +103,17 @@ def main ():
     elif opcion==2:
       placa=raw_input("Placa\n")
       print(usuario.buscarPlaca(placa))
-      usuario.desencolar()
+     
     elif opcion==3:
         nom=raw_input("Nombre Usuario\n")
         print(usuario.buscarPropietario(nom))
-        usuario.desencolar()
+        
     elif opcion==4:
         ficha=raw_input("Ficha\n")
         print(usuario.buscarFicha(ficha))
-        usuario.desencolar()
+        
     elif opcion==5:
+        usuario.desencolar()
         print(usuario.mirarElementos())
     else:
         print("Opcion no valida")
