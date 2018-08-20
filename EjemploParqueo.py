@@ -79,36 +79,44 @@ class Moto:
     def getPropietario (self):
         return self.prop+""
 
-   # def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
-    # return ''.join(random.choice(chars) for _ in range(size))
+    def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+     return ''.join(random.choice(chars) for _ in range(size))
 
 
 def main ():
     usuario = Cola()
-    moto1=Moto("MXWBOG","102Q","LUIS ARANGO")
-    moto2=Moto("WXYMED","709RQ","ANA ROMERO")
+while True:
+    usuario = Cola()
+    print("1. Registrar")
+    print("2. Consulta por Placa")
+    print("3. Consulta por Nombre Propietario ")
+    print("4. Consulta por Ficha ")
+    print("5. Registros ")
+    conPlaca= input()
+    conNom= input()
+    conFicha= input()
+    opcion = int(input())
+    if opcion == 1:
+        placa=raw_input("Placa\n")
+        nom=raw_input("Nombre Usuario\n")
+        ident=int(input("Carnet\n"))
+        ficha=id_generator(6)
+        motos=Moto(nom,placa,ident,ficha)
+        usuario.encolar(motos)
+    elif opcion==2:
+      print(usuario.buscarPlaca(conPlaca))
+      usuario.desencolar()
+    elif opcion==3:
+     print(usuario.buscarPropietario(conNom))
+     usuario.desencolar()
+    elif opcion==4:
+        print(usuario.buscarFicha(conFicha))
+        usuario.desencolar()
+    else:
+print(usuario.mirarElementos())
+        break
 
-    usuario.encolar(moto1)
-    usuario.encolar(moto2)
 
-    print(usuario.mirarElementos())
-
-    print(usuario.buscarPlaca("MXWBOG"))
-    print(usuario.buscarPlaca("XIP89"))
-
-    print(usuario.buscarFicha("102Q"))
-    print(usuario.buscarFicha("30P"))
-
-    print(usuario.buscarPropietario("MARIA"))
-    print(usuario.buscarPropietario("ANA ROMERO"))
-
-    usuario.desencolar()
-    print(usuario.mirarElementos())
-
-
-    #placa = raw_input("Placa de la moto")
-    #propietario = raw_input("Nombre propietario de la moto")
-    #ficha= id_generator(6)
 
 main()
 
