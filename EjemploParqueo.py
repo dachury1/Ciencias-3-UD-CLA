@@ -110,6 +110,7 @@ def main ():
     elif opcion==2:
       placa=raw_input("Placa\n")
       print(usuario.buscarPlaca(placa))
+<<<<<<< HEAD
       #usuario.desencolar()
     elif opcion==3:
         nom=raw_input("Nombre Usuario\n")
@@ -119,7 +120,19 @@ def main ():
         ident=int(input("Carnet\n"))
         print(usuario.buscarCodigo(ident))
         #usuario.desencolar()
+=======
+     
+    elif opcion==3:
+        nom=raw_input("Nombre Usuario\n")
+        print(usuario.buscarPropietario(nom))
+        
+    elif opcion==4:
+        ficha=raw_input("Ficha\n")
+        print(usuario.buscarFicha(ficha))
+        
+>>>>>>> cef41186507f1663198e6dc5c13d7147e41c5d5b
     elif opcion==5:
+        usuario.desencolar()
         print(usuario.mirarElementos())
     else:
         print("Opcion no valida")
