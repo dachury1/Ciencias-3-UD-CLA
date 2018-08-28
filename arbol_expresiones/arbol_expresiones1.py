@@ -27,7 +27,7 @@ def evaluar(arbol):
 pila = Pila()
 archivo = open("expresiones1.in","r")
 linea  = archivo.read()
-archivo = open("expresiones1.out","w")
+archivo = open("expresiones.out","w")
 for i in lineas.splitlines():
     convertir(i.split(" "),pila)
     resultado = evaluar(pila.desapilar())
