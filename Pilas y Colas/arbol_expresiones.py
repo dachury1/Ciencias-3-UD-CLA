@@ -23,11 +23,15 @@ def evaluar(arbol):
         return evaluar(arbol.izq) * evaluar(arbol.der)
     return int(arbol.valor)
     
-exp = raw_input("ingrese l expresion en posfija: ").split(" ")
-
 pila = Pila()
-
-convertir(exp, pila)
-
-print evaluar(pila.desapilar())
+exp = ""
+archivo = open("expresiones.in","r")
+exp = archivo.read()
+#exp=[linea.split() for linea in archivo]
+for linea in archivo.readlines():
+    convertir(exp.split(" "), pila)
+    print evaluar(pila.desapilar())
+    archivo2 = open("expresiones.out","w")
+    archivo2.write(str(evaluar(pila.desapilar())))
+    archivo.close()
 
