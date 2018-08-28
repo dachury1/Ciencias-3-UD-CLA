@@ -1,13 +1,4 @@
-#-------------------------------------------------------------------------------
-# Name:        módulo1
-# Purpose:
-#
-# Author:      Estudiantes
-#
-# Created:     28/08/2018
-# Copyright:   (c) Estudiantes 2018
-# Licence:     <your licence>
-#-------------------------------------------------------------------------------
+
 from pila import *
 from arbol import *
 
