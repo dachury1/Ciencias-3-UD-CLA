@@ -22,14 +22,7 @@ def evaluar(arbol):
     if arbol.valor == "*":
         return evaluar(arbol.izq) * evaluar(arbol.der)
     return int(arbol.valor)
-<<<<<<< HEAD:arbol_expresiones.py
 
-
-xp = raw_input("ingrese l expresion en posfija: ").split(" ")
-
-=======
-    
->>>>>>> 0935d0c0eeb9976aa98c449dde4ca530fcc4f244:Pilas y Colas/arbol_expresiones.py
 pila = Pila()
 exp = ""
 archivo = open("expresiones.in","r")
