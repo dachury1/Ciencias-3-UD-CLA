@@ -27,7 +27,6 @@ pila = Pila()
 exp = ""
 archivo = open("expresiones.in","r")
 exp = archivo.read()
-#exp=[linea.split() for linea in archivo]
 for linea in archivo.readlines():
     convertir(exp.split(" "), pila)
     print evaluar(pila.desapilar())
