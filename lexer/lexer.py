@@ -11,7 +11,7 @@
 import ply.lex as lex
 
 tokens = [ 'NAME','NUMBER','PLUS','MINUS','TIMES','DIVIDE', 'EQUALS','JUMPLINE'  ]
-#operacionLIST=['SUMA','RESTA','MULTIPLICACION','DIVISION','ES IGUAL']
+#operadorLIST=['SUMA','RESTA','MULTIPLICACION','DIVISION','ES IGUAL']
 
 t_ignore = ' \t'
 t_PLUS = r'\+'
