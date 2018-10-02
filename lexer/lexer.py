@@ -1,17 +1,8 @@
-#-------------------------------------------------------------------------------
-# Name:        module1
-# Purpose:
-#
-# Author:      LEIDY K
-#
-# Created:     01/10/2018
-# Copyright:   (c) LEIDY K 2018
-# Licence:     <your licence>
-#-------------------------------------------------------------------------------
+
 import ply.lex as lex
 
 tokens = [ 'NAME','NUMBER','PLUS','MINUS','TIMES','DIVIDE', 'EQUALS','JUMPLINE'  ]
-#operadorLIST=['SUMA','RESTA','MULTIPLICACION','DIVISION','ES IGUAL']
+
 
 t_ignore = ' \t'
 t_PLUS = r'\+'
@@ -39,7 +30,6 @@ def t_error(t):
 
 lex.lex() # Build the lexer
 
-#lex.input("x = 3 - 4 + 5 * 6")
 
 #lectura del archivo
 archivo = open("expresiones.in","r")
