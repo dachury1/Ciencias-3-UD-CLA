@@ -1,0 +1,13 @@
+programa() { 
+iniciar-programa
+inicia-ejecucion
+avanza;
+coge-zumbador;
+avanza;
+deja-zumbador;
+avanza;
+si frente-libre entonces
+apagate;
+termina-ejecucion
+finalizar-programa
+}

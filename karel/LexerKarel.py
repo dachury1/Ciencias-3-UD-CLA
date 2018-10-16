@@ -48,6 +48,11 @@ def t_APAGATE(t):
     t.type = 'E_TURNOFF'
     return t
 
+def t_PROGRAMA(t):
+    r'programa'
+    return t
+
+
 def t_MOVE(t):
     r'avanza'
     t.type = 'E_MOVE'
@@ -87,10 +92,6 @@ def t_COMENTARIO(t):
     r'\#.*'
     pass
 
-def t_PROGRAMA(t):
-    r'programa'
-    return t
-
 
 def t_NUMERO(t):
     r'\d+'
@@ -124,7 +125,7 @@ for x in listaExpresiones:
         guion=-1
         guion = x.find("-")
         if guion != -1:
-            print ('compuestas')
+            #print ('compuestas')
             print (str(tok.value) + " ---> " + str(tok.type))
             a=1
         else :
