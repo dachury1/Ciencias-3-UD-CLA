@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Name:        lexerkarel.py
+# Name:        lexerkarel1.2.py
 # linkografia: http://www.cmirg.com/karelotitlan/curso/introduccion.html
 #http://www.olimpiadadeinformatica.org.mx/omi/OMI_Primaria/material/EntrenamientoOMIKarel/Varios/Tutorial-de-Karel-Final.pdf
 #
@@ -8,7 +8,7 @@
 import ply.lex as lex
 a=0
 tokens = ['FIN','ESTRUCTURAS','RESERVADA','INSTRUCCION','E_MOVE','E_TURNOFF','NUMERO','EST_CONTROL','EST_ITERACION','E_BOOL','E_FIN',
-'NEW_INSTRUCTION','PROGRAMA','ABRIRPARENTESIS','CERRARPARENTESIS','PUNTOCOMA','OPERADOR_Y','OPERADOR_NO','OPERADOR_O','OPENBLOCK','CLOSEDBLOCK',
+'NEW_INSTRUCTION','PROGRAMA','ABRIRPARENTESIS','CERRARPARENTESIS','FIN_INSTRUCCION','OPERADOR_Y','OPERADOR_NO','OPERADOR_O','OPENBLOCK','CLOSEDBLOCK',
 'TYPE_DEFINE']
 
 
@@ -28,7 +28,7 @@ funcionBooleana1LIST=['frente-libre','frente-bloqueado','izquierda-libre','izqui
 t_ignore = ' \n'
 t_ABRIRPARENTESIS = r'\('
 t_CERRARPARENTESIS = r'\)'
-t_PUNTOCOMA	= ';'
+t_FIN_INSTRUCCION	= ';'
 t_TYPE_DEFINE = r'void'
 t_OPERADOR_Y = r'&&'
 t_OPERADOR_NO = r'!'

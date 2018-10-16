@@ -11,3 +11,4 @@ apagate;
 termina-ejecucion
 finalizar-programa
 }
+ningun-zumbador-en-la mochila
