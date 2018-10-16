@@ -20,9 +20,8 @@ expresionesLIST1=['iniciar-programa','deja-zumbador','coge-zumbador','gira-izqui
 
 reservadasLIST=['fin','inicio','mochila','como']
 
-funcionBooleana1LIST=['frente-libre','frente-bloqueado','izquierda-libre',
-                     'izquierda-bloqueada','derecha-libre','derecha-bloqueada','algun-zumbador-en-la mochila',
-                     'ningun-zumbador-en-la mochila','orientado-al-norte','orientado-al-sur','orientado-al-este',
+funcionBooleana1LIST=['frente-libre','frente-bloqueado','izquierda-libre','izquierda-bloqueada','derecha-libre','derecha-bloqueada','algun-zumbador-en-la-mochila',
+                     'ningun-zumbador-en-la-mochila','orientado-al-norte','orientado-al-sur','orientado-al-este',
                      'orientado-al-oeste','no-orientado-al-este','no-orientado-al-oeste','no-junto-a-zumbador',
                       'no-orientado-al-norte','no-orientado-al-sur','junto-a-zumbador','no-junto-a-zumbador']
 
@@ -83,10 +82,6 @@ def t_ESTRUCTURAS(t):
             t.type = 'RESERVADA'
             return t
 
-# Error handling rule
-def t_error(t):
-    print("Caracter invalido '%s'" % t.value[0])
-    t.lexer.skip(1)
 
 def t_COMENTARIO(t):
     r'\#.*'
@@ -110,6 +105,11 @@ def abrir_archivo(nombre):
     archivo = open(nombre, 'r')
     return  archivo.readlines()
 
+# Error handling rule
+def t_error(t):
+    print("Caracter invalido '%s'" % t.value[0])
+    t.lexer.skip(1)
+
 
 listaExpresiones = [x.strip('\n') for x in abrir_archivo("expresiones.txt")]
 #print (listaExpresiones)
@@ -124,8 +124,10 @@ for x in listaExpresiones:
         guion=-1
         guion = x.find("-")
         if guion != -1:
+            print ('compuestas')
             print (str(tok.value) + " ---> " + str(tok.type))
-
+            a=1
         else :
+
             print (str(tok.value) + " ---> " + str(tok.type))
-            #print ('compuestas')
+            a=2
